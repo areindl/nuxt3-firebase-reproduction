@@ -1,0 +1,68 @@
+div[id^='headlessui-dialog-overlay-'] {
+    backdrop-filter: blur(8px);
+    background-color: #01223770;
+}
+
+body {
+    @apply bg-gray-100 dark:bg-gray-800;
+}
+
+input[type='text'],
+input[type='password'],
+input[type='email'] {
+    @apply m-1 w-full rounded-lg border border-gray-300 px-3 py-2 shadow-sm focus:border-green-500 focus:outline-none focus:ring-1 focus:ring-green-500;
+}
+input[type='checkbox'] {
+    @apply h-4 w-4 rounded border-gray-300 bg-gray-100 text-green-600 focus:ring-2 focus:ring-green-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-green-600;
+}
+button[type='submit'],
+button[type='button'] {
+    @apply inline-flex justify-center rounded-md border border-transparent px-4  py-2 text-sm font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
+
+    &.primary {
+        @apply bg-green-500 text-white hover:bg-green-400 focus-visible:ring-green-500;
+    }
+
+    &.secondary {
+        @apply border-green-500 text-green-900 hover:text-green-700 dark:text-green-600 hover:dark:text-green-300;
+    }
+
+    &.tertiary {
+        @apply bg-gray-500 text-white;
+    }
+
+    &.no-outline {
+        @apply border-none bg-none;
+    }
+
+    &.error {
+        @apply bg-red-500 text-white;
+    }
+
+    &.destructive {
+        @apply border border-red-900 font-medium text-red-900 hover:text-red-400  dark:text-red-700;
+    }
+}
+label {
+    @apply mb-1 block text-sm font-medium text-gray-700;
+}
+.error {
+    @apply pl-2 text-xs uppercase text-gray-500;
+}
+
+table {
+    @apply min-w-full table-fixed divide-y pb-5 text-green-900 dark:text-green-400;
+    thead {
+        @apply border-b border-solid border-black bg-gray-300 dark:border-gray-200 dark:bg-gray-700;
+        th {
+            @apply py-3 px-6 text-left text-xs font-bold uppercase tracking-wider dark:bg-gray-800 dark:text-green-600;
+        }
+    }
+    tbody tr {
+        @apply hover:bg-gray-100 dark:hover:bg-gray-700;
+
+        td {
+            @apply whitespace-nowrap py-4 px-6 text-sm text-gray-900 dark:text-white;
+        }
+    }
+}

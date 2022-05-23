@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+    main:
+        container_name: mindfuel-meta
+        volumes:
+            - .:/app
+            - /app/node_modules
+            - ${GOOGLE_APPLICATION_CREDENTIALS}:/config
+        build:
+            context: .
+            target: builder
+        env_file:
+            - .env
+        environment:
+            - NUXT_HOST=0.0.0.0
+            - NUXT_PORT=${PORT}
+            - GOOGLE_APPLICATION_CREDENTIALS=/config
+        ports:
+            ## Standard App Port - should match exposed port Dockerfile
+            - ${PORT}:${PORT}
+        command: >
+            sh -c "npm run start"
