@@ -1,8 +1,7 @@
 <template>
     <div class="h-screen bg-slate-200">
         <div class="pt-12 sm:mx-auto sm:w-full sm:max-w-md">
-            <MetaLogo class="mx-auto"></MetaLogo>
-            <div class="pb-4 text-center text-lg font-semibold uppercase text-green-700">mindfuel meta</div>
+
             <div class="rounded-lg bg-white py-8 px-6 shadow sm:px-10">
                 <form class="mb-0 space-y-6" @submit.prevent="signIn">
                     <div>
@@ -32,7 +31,7 @@
     import { useForm, Field, ErrorMessage } from 'vee-validate'
     import { useToast } from 'vue-toastification'
     import { object, string } from 'yup'
-    import MetaLogo from '~~/components/MetaLogo.vue'
+  
 
     const { $firebaseAuth } = useNuxtApp()
     const router = useRouter()

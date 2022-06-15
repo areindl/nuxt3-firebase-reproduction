@@ -1,7 +1,7 @@
 import { Unsubscribe } from 'firebase/auth'
 import formatUser from '../helpers/format-user'
 import useUser from './useUser'
-import { useMetaUserStore } from '~~/store/metaUserStore'
+
 import { CustomClaims } from '~~/models/Claim'
 import { boolean } from 'yup'
 
@@ -11,7 +11,7 @@ import { boolean } from 'yup'
  */
 export default function () {
     const { $firebaseAuth } = useNuxtApp()
-    const metaUserStore = useMetaUserStore()
+
     const token = useCookie('token', {
         path: '/',
     })
